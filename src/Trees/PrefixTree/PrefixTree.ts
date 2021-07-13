@@ -1,3 +1,5 @@
+
+
 class TreeNode {
     value: string;
     children: Map<string, TreeNode>;
@@ -113,6 +115,13 @@ export class Trie {
             this.walkAndDelete(prefixNode);
         }
 
+    }
+
+    removePrefix(prefix: string): void {
+        const {hasPrefix, prefixNode} = this.checkPrefix(prefix);
+        if (hasPrefix) {
+            this.walkAndDelete(prefixNode)
+        }
     }
 
     has(word: string): boolean {

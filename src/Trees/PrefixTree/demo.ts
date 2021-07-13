@@ -206,14 +206,14 @@ const names = [
 
 const trie = new Trie();
 
-names.forEach((name) => trie.add(name));
+//names.forEach((name) => trie.add(name));
 
-// trie.add("Alexa");
-// trie.add("Alex");
+trie.add("Alexa");
+trie.add("Alex");
+trie.add("Andrew");
 
-// trie.add("Andrew");
-// console.log(trie.search("A"), trie);
+console.log(trie.search("A"), trie);
 
-// trie.remove("Alis");
+trie.remove("Alex");
 
-// console.log(trie.search("A"), trie);
+console.log(trie.search("A"), trie);
