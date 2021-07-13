@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "commonjs",
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "target": "ES2020",
+    "strictNullChecks": false,
+    "lib": [
+      "ESNext",
+      "dom"
+    ],
+    "rootDir": "src",
+    "moduleResolution": "node"
+  }
+}
