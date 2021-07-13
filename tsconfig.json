@@ -7,7 +7,6 @@
     "sourceMap": true,
     "allowJs": true,
     "target": "ES2020",
-    "strictNullChecks": false,
     "lib": [
       "ESNext",
       "dom"

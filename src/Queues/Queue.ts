@@ -1,5 +1,5 @@
 class Queue<T> {
-    collection: T[]
+    collection: T[] = []
 
     print() {
         console.log(this.collection);
@@ -9,7 +9,7 @@ class Queue<T> {
         this.collection.push(element);
     }
 
-    dequeue(): T {
+    dequeue(): T | undefined {
         return this.collection.shift();
     }
 
@@ -41,7 +41,7 @@ type PriorityElement<T> = {
 
 
 class PriorityQueue<V, T extends PriorityElement<V> = PriorityElement<V>> extends Queue<T> {
-    enqueue(element: T) {
+    enqueue(element: T): void {
         //#TODO work with edge case and if priority is equal - add element AFTER item
         if (this.isEmpty()) {
             super.enqueue(element);
