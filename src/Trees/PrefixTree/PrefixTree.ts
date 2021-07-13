@@ -1,5 +1,3 @@
-
-
 class TreeNode {
     value: string;
     children: Map<string, TreeNode>;
@@ -85,9 +83,9 @@ export class Trie {
         return prefix
             .split("")
             .reduce<{ hasPrefix: boolean; prefixNode: TreeNode }>(
-                ({prefixNode, hasPrefix}, currtLetter) => {
-                    if (prefixNode.children.has(currtLetter)) {
-                        prefixNode = prefixNode.children.get(currtLetter) as TreeNode;
+                ({prefixNode, hasPrefix}, currentLetter) => {
+                    if (prefixNode.children.has(currentLetter)) {
+                        prefixNode = prefixNode.children.get(currentLetter) as TreeNode;
                         return {prefixNode, hasPrefix};
                     }
                     return {prefixNode, hasPrefix: false};
