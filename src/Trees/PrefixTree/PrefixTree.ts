@@ -47,18 +47,18 @@ export class Trie {
     }
 
     private walkAndInsert(input: string): void {
-        input.split("").reduce((acc, currtLetter, index, self) => {
+        input.split("").reduce((acc, currentLetter, index, self) => {
             const isWord = index === self.length - 1;
 
-            if (!acc.children.has(currtLetter)) {
-                acc.children.set(currtLetter, new TreeNode(input.slice(0, index + 1)));
+            if (!acc.children.has(currentLetter)) {
+                acc.children.set(currentLetter, new TreeNode(input.slice(0, index + 1)));
             }
-            const currentChild = acc.children.get(currtLetter) as TreeNode;
+            const currentChild = acc.children.get(currentLetter) as TreeNode;
 
-            currentChild.isWord = isWord;
+            currentChild.isWord = currentChild.isWord || isWord;
             currentChild.parent = acc;
 
-            return acc.children.get(currtLetter) as TreeNode;
+            return acc.children.get(currentLetter) as TreeNode;
         }, this.root);
     }
 
@@ -131,3 +131,8 @@ export class Trie {
         return this.walkAndSearch(input);
     }
 }
+
+
+
+
+
